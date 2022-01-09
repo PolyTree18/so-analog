@@ -1,0 +1,27 @@
+<html>
+  <head>
+    {% include 'head.html' %}
+  </head>
+  <body class="color-bg-inset">
+    {% include 'header.html' %}
+    {% set sub_title = "Все вопросы" %}
+    {% set sub_btn_txt = "Задать вопрос" %}
+    {% set sub_btn_href = "/ask" %}
+    {% include 'subhead.html'%}
+    <div class="container clearfix">
+      <div class="d-flex flex-md-row flex-column px-md-0 px-3">
+
+        {% include 'sidebar.html'%}
+
+        <div class="col-md-9 col-9 mt-2">
+
+            {% for q in questions["all"] %}
+              {% include 'question.html' %}
+            {% endfor %}
+
+        </div>
+        {% include 'featured.html' %}
+      </div>
+    </div>
+  </body>
+</html>

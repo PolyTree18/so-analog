@@ -1,0 +1,38 @@
+<div class="col-5">
+  <div class="mr-4 mt-3 ml-2 Box color-border-attention position-sticky top-9">
+    <div class="Box-header color-border-attention Box-row color-bg-attention">
+      Рекомендуемое
+    </div>
+    <div class="Box-body color-border-attention">
+      {% for q in questions["all"] %}
+      <ul class="ActionList mb-0 pt-0 pb-0">
+        <li class="ActionList-item">
+          <a class="ActionList-content color-fg-default no-underline" href="/q/{{q['id']}}">
+            <span class="ActionList-item-visual ActionList-item-visual--leading">
+              <img src='{{get_user_info(q["author"])[1]}}' alt="UserAvatar" class="avatar avatar-small" width=22 height=22>
+            </span>
+            {% set sht = shorten(q["title"], 28)[0] %}
+            {% if sht != q["title"] %}
+              {% set sht = sht + ".." %}
+            {% endif %}
+            <div class="ActionList-item-label">
+              <span class="f6 text-bold">{{sht}}</span>
+              <p class="f6 text-light text-small mb-1" tyle="line-height: 50%;">
+                {% for t in q["tags"] %}
+                  <span class="branch-name mr-1">{{t}}</span>
+                {% endfor %}
+              </p>
+            </div>
+            <span class="ActionList-item-visual ActionList-item-visual--trailing">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+                ></path>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>

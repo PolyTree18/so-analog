@@ -1,0 +1,77 @@
+<a class="color-fg-default no-underline d-table width-full width-md-auto" style="min-width: 100%;max-width: 100%;" href="/q/{{q['id']}}">
+  <div class="d-table-cell">
+    <ul class="ActionList">
+      <li class="ActionList-item Box color-border-severe">
+          <div class="mt-2 ml-2 pt-1 pl-1">
+            <div class="d-inline-block">
+              {% set user = get_user_info(q["author"]) %}
+              <img class="avatar" alt="user-avatar" src='{{user[1]}}' width="32" height="32" />
+              <span align=center class="f3-light pl-1 pt-1 color-fg-subtle">{{user[0]}}</span>
+              <div class="f6 pr-1 color-fg-subtle">
+                <span>
+                  <svg aria-hidden="true" class="octicon octicon-primitive-dot color-fg-severe ml-2" height="13" version="1.1" viewBox="6 0 2 16" width="2">
+                    <path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill-rule="evenodd"></path>
+                  </svg>
+                  {{user[2]["bronze"]}}
+                </span>
+                <span>
+                  <svg aria-hidden="true" class="octicon octicon-primitive-dot color-fg-subtle ml-2" height="13" version="1.1" viewBox="6 0 2 16" width="2">
+                    <path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill-rule="evenodd"></path>
+                  </svg>
+                  {{user[2]["gold"]}}
+                </span>
+                <span>
+                  <svg aria-hidden="true" class="octicon octicon-primitive-dot color-fg-done ml-2" height="13" version="1.1" viewBox="6 0 2 16" width="2">
+                    <path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill-rule="evenodd"></path>
+                  </svg>
+                  {{user[2]["diamonds"]}}
+                </span>
+              </div>
+            </div>
+            <div class="d-table-cell pt-1">
+              {% for tag in q["tags"] %}
+                <span class="Label mr-1 Label--done">{{tag}}</span>
+              {% endfor %}
+            </div>
+            <div class="Box border-right-0 rounded-right-0 border-top-0 border-bottom-0">
+              <div class="d-inline-block float-right pl-1 color-bg-severe Box border-left-0 border-right-0 rounded-left-0 rounded-right-0">
+                <span class="float-right pr-3 text-light">
+                  <div class="markdown-body">
+                    <span class="text-mono">{{qstats[q["id"]]["views"]}}</span> Просм.
+                  </div>
+                </span>
+              </div>
+              <div class="d-inline-block float-right pl-1 color-bg-severe rounded-left-3 Box border-right-0 rounded-right-0">
+                <span class="float-right pr-3 text-light">
+                  <div class="markdown-body">
+                    <span class="text-mono">{{qstats[q["id"]]["votes"]}}</span> Голосов
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        <hr/>
+        <span class="ActionList-content pb-3">
+          {% if qstats[q["id"]]["answs"] > 0 %}
+            <div class="Box color-border-success-emphasis color-bg-success">
+          {% else %}
+            <div class="Box">
+          {% endif %}
+            <div class="p-1" style="text-align: center;">
+              <span align=center class="f5 color-fg-subtle">{{qstats[q["id"]]["answs"]}}</span>
+              <span align=center class="f4-light text-small color-fg-subtle">Ответов</span>
+            </div>
+          </div>
+          <div class="ActionList-item-descriptionWrap ActionList-item-descriptionWrap">
+            <span class="ActionList-item-label">{{q["title"]}}</span>
+            <div class="ActionList-item-description pt-1" style="line-height: 50%;">
+              {% for i in shorten(q["description"], 70) %}
+                <p>{{i}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </span>
+      </li>
+    </ul>
+  </div>
+</a>

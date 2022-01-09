@@ -1,0 +1,7 @@
+{
+  "all": [
+    {"author": "97ef1d89bbe41845db3f0f547b60755f", "title": "Как считать количество реакций в сообщении (discord.py)", "description": "Как посчитать количество реакций раздельно так, чтобы было не количество всех реакций, а одной нужной эмоции", "tags": ["python-3.x", "discord", "discordpy"], "id": "82cc1f32d4849d784b0d3f60223c74b83fa3458751c7296b"},
+    {"author": "090aefce54c92f528ce3033346308df9", "title": "Когда бот?", "description": "Когда уже будет бот? Я устал ждать.", "tags": ["бот", "tergorit", "когда"], "id": "a915dba11a2332fabcf5ff7004f6ad6078f4bae79cf4d9d8"},
+    {"author": "7f84b0b3f3761056a9db80cd1dcc08dc", "title": "Magento cloud d0cker - \"ece-patches apply\" не работает", "description": "Я использую Windows 10 для docker с WSL 2. Я получаю ошибку при настройке Magento Cloud в среде docker, используя этот гайд, при использовании команды ниже возникает ошибка.", "tags": ["docker", "magento", "win-10"], "id": "782acd6aa60f4b67960302528d3c4b4fcccbd7cf24494d15"}
+  ]
+}

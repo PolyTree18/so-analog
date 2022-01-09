@@ -1,0 +1,20 @@
+<div class="Header position-sticky top-0">
+  <div class="Header-item">
+    <a href="#" class="Header-link f4 d-flex flex-items-center">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: text-bottom;"><path d="M11.97 6.97a.75.75 0 000 1.06l2.47 2.47-2.47 2.47a.75.75 0 101.06 1.06l3-3a.75.75 0 000-1.06l-3-3a.75.75 0 00-1.06 0zM9.03 8.03a.75.75 0 00-1.06-1.06l-3 3a.75.75 0 000 1.06l3 3a.75.75 0 001.06-1.06L6.56 10.5l2.47-2.47z"></path><path fill-rule="evenodd" d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21c2.63 0 5.033-.967 6.875-2.564l4.345 4.344a.75.75 0 101.06-1.06l-4.344-4.345A10.459 10.459 0 0021 10.5C21 4.701 16.299 0 10.5 0zm-9 10.5a9 9 0 1118 0 9 9 0 01-18 0z"></path></svg>
+      <span>DStack</span>
+    </a>
+  </div>
+
+  <div class="Header-item Header-item--full">
+    <input class="form-control Header-input input-block pl-3" style="max-width: 40%" type="text" placeholder="Искать на DiamondStack"/>
+  </div>
+
+  <div class="Header-item">
+    {% if user != None %}
+      <img class="avatar" height="32" alt="@{{user['login']}}" src='{{user["avatar_url"]}}' width="32">
+    {% else %}
+      <a type="submit" class="color-fg-on-emphasis color-bg-accent-emphasis no-underline btn btn-sm mr-4" href="/login">Войти</a>
+    {% endif %}
+  </div>
+</div>
